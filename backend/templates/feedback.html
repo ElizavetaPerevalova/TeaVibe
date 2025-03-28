@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+        crossorigin="anonymous">
+</head>
+<body class="bg-light">
+    <div class="container mt-3">
+        <h2><a href='#main' id='feedback'>Обратная связь</a></h2>
+        <form action="/submit_feedback" method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label">Ваше имя</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Ваш email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Ваш номер телефона</label>
+                <input type="tel" class="form-control" id="phone" name="phone" required>
+            </div>
+            <div class="mb-3">
+                <label for="problem_type" class="form-label">Тип проблемы</label>
+                <select class="form-select" id="problem_type" name="problem_type" required>
+                    <option value="technical">Техническая проблема</option>
+                    <option value="billing">Проблема с оплатой</option>
+                    <option value="general">Общая проблема</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Описание проблемы или заявки</label>
+                <textarea class="form-control" id="description" name="description" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Отправить</button>
+        </form>
+    </div>
+</body>
+</html>
