@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт Визитка</title>
+  <!-- Фавикон -->
+  <link rel="icon" href="/static/favicon2.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+</head>
+  <style>
+    /* Общий сброс стилей */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+    }
+
+    /* Стили хедера */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background-color:rgb(80, 126, 92);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 1000;
+    }
+    .logo {
+      {% comment %} position: absolute; /* Позиционируем элемент относительно страницы */ {% endcomment %}
+      left: 0px; /* Расстояние от левого края страницы */
+      top: 5px; /* Расстояние от верхнего края страницы */
+      width: 10px; /* Ширина элемента */
+  } 
+    header nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    header nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    header nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Стили футера */
+footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40px;
+      margin-top: 50px;
+      background-color: rgb(79, 67, 55);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      z-index: 500;
+    }
+
+    /* Стили разделов */
+    .section {
+      padding: 80px 20px;
+      min-height: calc(100vh - 100px);
+    }
+
+    .section:nth-child(even) {
+      background-color: #f4f4f4;
+    }
+
+    .section:nth-child(odd) {
+      background-color: #fff;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      text-align: center;
+      font-size: 18px;
+    }
+
+    /* Стили для текста в разделе главная */
+    #main {
+      position: relative;
+    }
+
+    #main-heading {
+      position: absolute;
+      width: 100%;
+      padding: 60px 0;
+      top: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      font-size: 68px;
+      line-height: 113%;
+      text-align: center;
+      color: #000000;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Main-section контейнер */
+    .main-section {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-top: 20px;
+      background: #ffffff;
+    }
+
+    /* Отступы для основного раздела */
+    #main {
+      padding-top: 200px; /* Учитываем высоту хедера (60px) и заголовка (примерно 140px) */
+    }
+    
+    /* Текстовый блок */
+    .main-section .text {
+    position: absolute; /* Позиционируем элемент относительно страницы */
+    left: 600px; /* Расстояние от левого края страницы */
+      width: 50%;
+      margin-top: 20px; /* Добавляем отступ сверху */
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      font-size: 26px;
+      line-height: 150%;
+      padding: 20px;
+      
+    }
+    /* Стили для картинки */
+    .blueprint {
+        position: absolute; /* Позиционируем элемент относительно страницы */
+        left: 200px; /* Расстояние от левого края страницы */
+        top: 260px; /* Расстояние от верхнего края страницы */
+        width: 400px; /* Ширина элемента */
+    }
+        /* Заголовок "Наш путь" */
+        #path-heading {
+          position: absolute;
+          width: 100%; /* Заголовок занимает всю ширину */
+          padding: 60px 0; /* Отступы сверху и снизу */
+          top: 570px; /* Расстояние от верхнего края страницы */
+          left: 50%; /* Центрируем по горизонтали */
+          transform: translateX(-50%); /* Сдвигаем на половину ширины для точного центрирования */
+          font-family: 'Playfair Display', serif; /* Шрифт */
+          font-weight: 500;
+          font-size: 68px; /* Размер текста */
+          line-height: 113%; /* Межстрочный интервал */
+          text-align: center; /* Центрируем текст */
+          color: #000000; /* Черный цвет текста */
+          background: #ffffff; /* Белый фон */
+          display: flex; /* Flex-контейнер */
+          align-items: center; /* Выравнивание по вертикали */
+          justify-content: center; /* Выравнивание по горизонтали */
+        }
+        
+        /* Текстовый блок под заголовком */
+        .text_path {
+          position: absolute; /* Позиционируем элемент относительно страницы */
+          left: 800px; /* Расстояние от левого края страницы */
+          top: 700px; /* Расстояние от верхнего края страницы */
+          width: 30%; /* Ширина блока текста */
+          font-family: 'Playfair Display', serif; /* Шрифт */
+          font-weight: 500;
+          font-size: 26px; /* Размер текста */
+          line-height: 150%; /* Межстрочный интервал */
+          padding: 20px; /* Внутренние отступы */
+          background: #ffffff; /* Белый фон */
+          margin-top: 20px; /* Отступ сверху */
+        }
+        /* Стили для картинки */
+        .path {
+            position: absolute; /* Позиционируем элемент относительно страницы */
+            left: 0px; /* Расстояние от левого края страницы */
+            top: 760px; /* Расстояние от верхнего края страницы */
+            width: 700px; /* Ширина элемента */
+        }
+        /* Заголовок "Наш путь" */
+        #feedback-heading {
+          position: absolute;
+          width: 100%; /* Заголовок занимает всю ширину */
+          padding: 60px 0; /* Отступы сверху и снизу */
+          top: 1200px; /* Расстояние от верхнего края страницы */
+          left: 50%; /* Центрируем по горизонтали */
+          transform: translateX(-50%); /* Сдвигаем на половину ширины для точного центрирования */
+          font-family: 'Playfair Display', serif; /* Шрифт */
+          font-weight: 500;
+          font-size: 68px; /* Размер текста */
+          line-height: 113%; /* Межстрочный интервал */
+          text-align: center; /* Центрируем текст */
+          color: #000000; /* Черный цвет текста */
+          background: #ffffff; /* Белый фон */
+          display: flex; /* Flex-контейнер */
+          align-items: center; /* Выравнивание по вертикали */
+          justify-content: center; /* Выравнивание по горизонтали */
+        }
+        /* Заголовок "Наш путь" */
+        #contacts-heading {
+          position: absolute;
+          width: 100%; /* Заголовок занимает всю ширину */
+          padding: 60px 0; /* Отступы сверху и снизу */
+          top: 2100px; /* Расстояние от верхнего края страницы */
+          left: 50%; /* Центрируем по горизонтали */
+          transform: translateX(-50%); /* Сдвигаем на половину ширины для точного центрирования */
+          font-family: 'Playfair Display', serif; /* Шрифт */
+          font-weight: 500;
+          font-size: 68px; /* Размер текста */
+          line-height: 113%; /* Межстрочный интервал */
+          text-align: center; /* Центрируем текст */
+          color: #000000; /* Черный цвет текста */
+          background: #ffffff; /* Белый фон */
+          display: flex; /* Flex-контейнер */
+          align-items: center; /* Выравнивание по вертикали */
+          justify-content: center; /* Выравнивание по горизонтали */
+        }
+        /* Контейнер для социальных ссылок */
+        .social-links {
+          {% comment %} position: absolute;
+          top: 2100px; {% endcomment %}
+          display: flex; /* Горизонтальное расположение ссылок */
+          justify-content: center; /* Центрирование ссылок по горизонтали */
+          align-items: center; /* Центрирование по вертикали */
+          gap: 20px; /* Расстояние между ссылками */
+          margin: 20px 0; /* Отступ сверху и снизу */
+          color: #ffffff; /* Наследуем цвет текста от родителя */
+          text-decoration: none; /* Убираем подчеркивание */
+          font-size: 17px; /* Устанавливаем размер шрифта */
+        }
+
+.social-link:hover {
+  text-decoration: underline; /* Добавляем подчеркивание при наведении */
+}
+        
+        /* Ссылки */
+        .social-link img {
+          width: 30px; /* Размер иконок */
+          height: 30px;
+          transition: transform 0.3s ease; /* Анимация при наведении */
+        }
+        
+        /* Эффект при наведении */
+        .social-link img:hover {
+          transform: scale(1.2); /* Увеличение иконки при наведении */
+        }
+  </style>
+</head>
+<body>
+  <!-- Хедер -->
+  <header>
+    <div class="logo">
+      <img src='/static/Шапка/ТиВибе.svg'>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#main">Главная</a></li>
+        <li><a href="#our_path">Путь</a></li>
+        <li><a href="#feedback">Обратная связь</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Основной контент -->
+  <div id="main" class="section">
+    <div id="main-heading">
+      Идеальный чай — легко!
+    </div>
+    <div class="main-section">
+
+    <img src="static/Главная/Чаеварка-чертеж.svg" alt="Чаеварка чертеж" class="blueprint">
+
+    <div>
+        <p class="text">
+          Чаеварка "TeaVibe" — это аналог умной кофе машины, но для чая. 
+          Она позволяет любому человеку, даже не разбирающемуся в чайном ремесле, 
+          получать идеально приготовленный напиток с минимальными затратами во времени.
+        </p>
+      </div>
+  </div>
+
+  <div id="our_path" class="section">
+    <div id="path-heading">
+      Наш путь
+    </div>
+    <img src="static/Путь/карта.svg" alt="Чаеварка чертеж" class="path">
+    <p class="text_path">
+      Чаеварка зародилась еще на школьной скамье. Проект развивался вместе с нашими навыками.
+      Мы с командой побеждали и становились призерами крупных конкурсов и акселераторов,
+      выступали с проектом в Общественной палате. И по сей день мы продолжаем развиваться.
+      В планах на ближайшее время — получение гранта, завершение разработки MVP,
+      его патентование и сертификация. После первых продаж и роста в B2B, мы хотим выйти на рынок B2C.
+    </p>
+  </div>
+
+  <div id="feedback" class="section">
+    <div id="feedback-heading">
+      Обратная связь
+    </div>
+    {% include "feedback.html" %}
+  </div> 
+
+<div id="contacts" class="section">
+  <div id="contacts-heading">
+    
+  </div>
+
+    {% comment %} <div id="contacts" class="section">
+      <p class="text_contacts">
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link" href="https://t.me/teamaker_tg"><img src='/static/Контакты/TG.svg'></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://vk.com/teavibecompany"><img src='/static/Контакты/VK.svg'></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="mailto:teavibe.company@gmail.com">teavibe.company@gmail.com</a>
+        </li>
+    </ul> {% endcomment %}
+  </p>
+  </div>
+
+  <!-- Футер -->
+  <footer>
+    <div class="social-links">
+      <a href="https://t.me/teamaker_tg" target="_blank" class="social-link">
+        <img src="/static/Контакты/TG.svg" alt="Telegram">
+      </a>
+      <a href="https://vk.com/teavibecompany" target="_blank" class="social-link">
+        <img src="/static/Контакты/VK.svg" alt="VK">
+      </a>
+      <a href="mailto:teavibe.company@gmail.com" class="social-link">
+        teavibe.company@gmail.com
+      </a>
+    </div>
+  </footer>
+</body>
+</html>

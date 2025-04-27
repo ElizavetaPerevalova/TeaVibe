@@ -1,16 +1,58 @@
-<footer>
+{% comment %} <footer>
     <ul class="nav nav-pills">
         <li class="nav-item">
-            <a class="nav-link" href='#main'><img src='https://www.kolaymetraj.com/images/km_ikon_09.png' id="contacts"></a>
+            <a class="nav-link" href='#main'><img src='/static/Контакты/TG.svg' id="contacts"></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="https://t.me/teamaker_tg">Телеграм</a>
+            <a class="nav-link" href="https://t.me/teamaker_tg"><img src='/static/Контакты/TG.svg'></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="teavibe.company@gmail.com">Почта</a>
+            <a class="nav-link" href="https://vk.com/teavibecompany"><img src='/static/Контакты/VK.svg'></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="https://vk.com/teavibecompany">Вк</a>
+            <a class="nav-link" href="mailto:teavibe.company@gmail.com">Наша почта: teavibe.company@gmail.com</a>
         </li>
     </ul>
 </footer>
+<style>
+footer {
+    background-color: #333333; /* Фоновый цвет футера */
+    color: #ffffff; /* Цвет текста для контраста */
+    height: auto;
+    padding: 20px 10px; /* Внутренние отступы для футера */
+    display: flex; /* Flexbox для выравнивания содержимого */
+    justify-content: center; /* Центрирование элементов по горизонтали */
+    align-items: center; /* Центрирование элементов по вертикали */
+    flex-wrap: wrap; /* Перенос строк для элементов на маленьких экранах */
+    box-sizing: border-box; /* Учитывать padding в расчете ширины */
+}
+
+footer ul {
+    display: flex; /* Горизонтальное расположение списка */
+    list-style: none; /* Убираем маркеры списка */
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap; /* Перенос элементов на новую строку при необходимости */
+    justify-content: center; /* Центрирование элементов внутри списка */
+}
+
+footer ul li {
+    margin: 10px; /* Отступы между элементами списка */
+}
+
+footer ul li a {
+    color: #ffffff; /* Цвет текста ссылок */
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+    display: flex; /* Flexbox для выравнивания содержимого */
+    align-items: center; /* Центрирование содержимого по вертикали */
+}
+
+footer ul li img {
+    height: 24px; /* Высота иконок (можно изменить по необходимости) */
+    margin-right: 5px; /* Отступ справа от иконки */
+}
+
+footer ul li a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении на ссылку */
+}
+</style> {% endcomment %}

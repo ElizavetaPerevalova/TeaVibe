@@ -11,7 +11,7 @@
 </head>
 <body class="bg-light">
     <div class="container mt-3">
-        <h2><a href='#main' id='feedback'>Обратная связь</a></h2>
+        <h2><a href='#main' id='feedback'></a></h2>
         <form action="/submit_feedback" method="post">
             <div class="mb-3">
                 <label for="name" class="form-label">Ваше имя</label>
@@ -42,3 +42,44 @@
     </div>
 </body>
 </html>
+<style>
+    /* Фон страницы */
+    body {
+        background-color: #f8f9fa; /* Светлый фон */
+    }
+
+    /* Контейнер формы */
+    .container {
+        position: absolute;
+        top: 1400px; /* Отступ сверху */
+        max-width: 600px; /* Ограничение ширины формы */
+        padding-bottom: 600px; 
+        background-color: #ffffff; /* Белый фон формы */
+        padding: 20px; /* Внутренние отступы */
+        border-radius: 8px; /* Скруглённые углы */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+    }
+
+    /* Заголовок формы */
+    h2 {
+        font-family: 'Arial', sans-serif; /* Шрифт заголовка */
+        font-size: 24px; /* Размер текста */
+        text-align: center; /* Центрируем текст */
+        margin-bottom: 80px; /* Отступ снизу */
+    }
+
+    /* Кнопка отправки */
+    .btn-primary {
+        background-color: rgb(79, 67, 55);
+        border: none; /* Убираем обводку */
+        padding: 10px 20px; /* Внутренние отступы кнопки */
+        font-size: 16px; /* Размер шрифта */
+        font-weight: bold; /* Жирный шрифт */
+        border-radius: 5px; /* Скруглённые углы */
+        width: 100%; /* Кнопка на всю ширину */
+    }
+
+    .btn-primary:hover {
+        background-color:rgb(80, 126, 92);
+    }
+</style>
