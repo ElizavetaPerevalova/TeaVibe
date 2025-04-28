@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сайт Визитка</title>
+    <title>TeaVibe</title>
   <!-- Фавикон -->
   <link rel="icon" href="/static/favicon2.jpg" type="image/jpeg">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
@@ -19,8 +19,13 @@
     html, body {
       height: 100%;
       font-family: Arial, sans-serif;
-      background: #ffffff;
     }
+    {% comment %} body {
+      background-image: url('/static/фон.jpg'); /* Путь к изображению */
+      background-size: cover; /* Масштабирование, чтобы изображение покрывало весь фон */
+      background-repeat: no-repeat; /* Отключаем повторение изображения */
+      background-position: center; /* Центрируем изображение */
+    } {% endcomment %}
 
     /* Стили хедера */
     header {
@@ -37,12 +42,12 @@
       padding: 0 20px;
       z-index: 1000;
     }
-    .logo {
-      {% comment %} position: absolute; /* Позиционируем элемент относительно страницы */ {% endcomment %}
+    {% comment %} .logo {
+      position: absolute; /* Позиционируем элемент относительно страницы */ 
       left: 0px; /* Расстояние от левого края страницы */
-      top: 5px; /* Расстояние от верхнего края страницы */
-      width: 10px; /* Ширина элемента */
-  } 
+      top: 0px; /* Расстояние от верхнего края страницы */
+      width: 5px; /* Ширина элемента */
+  }  {% endcomment %}
     header nav ul {
       display: flex;
       list-style: none;
@@ -186,7 +191,7 @@ footer {
           width: 30%; /* Ширина блока текста */
           font-family: 'Playfair Display', serif; /* Шрифт */
           font-weight: 500;
-          font-size: 26px; /* Размер текста */
+          font-size: 30px; /* Размер текста */
           line-height: 150%; /* Межстрочный интервал */
           padding: 20px; /* Внутренние отступы */
           background: #ffffff; /* Белый фон */
@@ -195,8 +200,8 @@ footer {
         /* Стили для картинки */
         .path {
             position: absolute; /* Позиционируем элемент относительно страницы */
-            left: 0px; /* Расстояние от левого края страницы */
-            top: 760px; /* Расстояние от верхнего края страницы */
+            left: 50px; /* Расстояние от левого края страницы */
+            top: 730px; /* Расстояние от верхнего края страницы */
             width: 700px; /* Ширина элемента */
         }
         /* Заголовок "Наш путь" */
@@ -204,26 +209,7 @@ footer {
           position: absolute;
           width: 100%; /* Заголовок занимает всю ширину */
           padding: 60px 0; /* Отступы сверху и снизу */
-          top: 1200px; /* Расстояние от верхнего края страницы */
-          left: 50%; /* Центрируем по горизонтали */
-          transform: translateX(-50%); /* Сдвигаем на половину ширины для точного центрирования */
-          font-family: 'Playfair Display', serif; /* Шрифт */
-          font-weight: 500;
-          font-size: 68px; /* Размер текста */
-          line-height: 113%; /* Межстрочный интервал */
-          text-align: center; /* Центрируем текст */
-          color: #000000; /* Черный цвет текста */
-          background: #ffffff; /* Белый фон */
-          display: flex; /* Flex-контейнер */
-          align-items: center; /* Выравнивание по вертикали */
-          justify-content: center; /* Выравнивание по горизонтали */
-        }
-        /* Заголовок "Наш путь" */
-        #contacts-heading {
-          position: absolute;
-          width: 100%; /* Заголовок занимает всю ширину */
-          padding: 60px 0; /* Отступы сверху и снизу */
-          top: 2100px; /* Расстояние от верхнего края страницы */
+          top: 1080px; /* Расстояние от верхнего края страницы */
           left: 50%; /* Центрируем по горизонтали */
           transform: translateX(-50%); /* Сдвигаем на половину ширины для точного центрирования */
           font-family: 'Playfair Display', serif; /* Шрифт */
@@ -239,8 +225,6 @@ footer {
         }
         /* Контейнер для социальных ссылок */
         .social-links {
-          {% comment %} position: absolute;
-          top: 2100px; {% endcomment %}
           display: flex; /* Горизонтальное расположение ссылок */
           justify-content: center; /* Центрирование ссылок по горизонтали */
           align-items: center; /* Центрирование по вертикали */
@@ -266,6 +250,38 @@ footer {
         .social-link img:hover {
           transform: scale(1.2); /* Увеличение иконки при наведении */
         }
+        /* Убираем фоны у секций */
+.section:nth-child(even),
+.section:nth-child(odd) {
+  background: transparent !important;
+}
+
+/* Убираем белый фон у заголовков */
+#main-heading,
+#path-heading,
+#feedback-heading,
+#contacts-heading {
+  background: transparent !important;
+}
+
+/* Убираем фон у текстовых блоков */
+.main-section,
+.text,
+.text_path {
+  background: transparent !important;
+}
+
+/* если нужно включить фон
+{% comment %} body {
+  background-image: url('/static/2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed; /* Фиксируем фон */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* На всю высоту экрана */
+}  {% endcomment %}
   </style>
 </head>
 <body>
@@ -327,21 +343,7 @@ footer {
   <div id="contacts-heading">
     
   </div>
-
-    {% comment %} <div id="contacts" class="section">
-      <p class="text_contacts">
-      <ul class="nav nav-pills">
-        <li class="nav-item">
-            <a class="nav-link" href="https://t.me/teamaker_tg"><img src='/static/Контакты/TG.svg'></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="https://vk.com/teavibecompany"><img src='/static/Контакты/VK.svg'></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="mailto:teavibe.company@gmail.com">teavibe.company@gmail.com</a>
-        </li>
-    </ul> {% endcomment %}
-  </p>
+  <p></p>
   </div>
 
   <!-- Футер -->
