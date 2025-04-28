@@ -1,0 +1,14 @@
+/* Сброс стилей для всей страницы */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Высота для растяжения на весь экран */
+    width: 100%; /* Ширина для растяжения на весь экран */
+    box-sizing: border-box;
+}
+
+/* Фон для всей страницы */
+body {
+    background: url('/static/ещё_что-то2.svg') no-repeat center center fixed; /* Центрируем фон */
+    background-size: 100%; /* Полностью отображаем фон, сохраняя пропорции */
+}
